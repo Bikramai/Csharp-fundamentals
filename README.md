@@ -14,13 +14,13 @@ A namespace is a container for related classes. So as your application grows in 
 As the number of classes and namespaces even grow further, you may want to physically separate related namespaces into separate assemblies. An assembly is a file (DLL or EXE) that contains one or more namespaces and classes. An EXE file represents a program that can be executed. A DLL is a file that includes code that can be re-used across different programs.
 
 # Section: 2 - Primitive Types and Expressions
-Variables and Constants
-Overflowing
-Scope
-Demo: Variables and constants
-Type Conversion
-Demo: Type Conversion
-Operators
-What are Logical Operators?
-Demo: Operators
-Comments
+## Variables and Constants
+- Overflowing
+- Scope
+- Demo: Variables and constants
+- Type Conversion
+- Demo: Type Conversion
+- Operators
+- What are Logical Operators?
+- Demo: Operators
+- Comments
