@@ -11,43 +11,31 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            var numbers = new[] { 3, 7, 9, 2, 14, 6 };
+            var numbers = new List<int>() { 1, 2, 3, 4, 5 };
+            numbers.Add(1);
+            numbers.AddRange(new int[3] { 6, 7, 8 });
 
-            // Length
-            Console.WriteLine("Length: " + numbers.Length);
+            foreach (var number in numbers);
+                Console.WriteLine(numbers);
 
-            // IndexOf()
-            var index = Array.IndexOf(numbers, 9);
-            Console.WriteLine("Index of 9: " + index);
+            Console.WriteLine();
+            Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
+            Console.WriteLine("Last Index of 1: " + numbers.LastIndexOf(1));
 
-            // Clear()
-            Array.Clear(numbers, 0, 2);
+            Console.WriteLine("Count: " + numbers.Count);
 
-            Console.WriteLine("Effect of Clear()");
-            foreach (var n in numbers)
-                Console.WriteLine(n);
+            for (var i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] == 1)
+                    numbers.Remove(numbers[i]);
+            }
+            foreach (var number in numbers)
+                Console.WriteLine(number);
 
-            // Copy()
-            int[] another = new int[3];
-            Array.Copy(numbers, another, 3);
+            numbers.Clear();
+            Console.WriteLine("Count: " + numbers.Count);
 
-            Console.WriteLine("Effect of Copy()");
-            foreach (var n in another)
-                Console.WriteLine(n);
 
-            // Sort()
-            Array.Sort(numbers);
-
-            Console.WriteLine("Effect of Sort()");
-            foreach (var n in numbers)
-                Console.WriteLine(n);
-
-            // Reverse()
-            Array.Reverse(numbers);
-
-            Console.WriteLine("Effect of Reverse()");
-            foreach (var n in numbers)
-                Console.WriteLine(n);
         }
     }
 }
