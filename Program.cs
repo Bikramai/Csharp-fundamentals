@@ -5,23 +5,16 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Control_Flow
+namespace Random_Class
 {
     class Program
     {
         static void Main(string[] args)
         {
-            while (true)
+            var random = new Random();
+            for (int i = 0; i < 10; i++)
             {
-                Console.Write("Type Your Name: ");
-                var input = Console.ReadLine();
-
-                if (!String.IsNullOrWhiteSpace(input))
-                {
-                    Console.WriteLine("@Echo: " + input);
-                    continue;
-                }
-                break;
+                Console.WriteLine(random.Next());
             }
         }
     }
