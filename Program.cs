@@ -5,37 +5,28 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace DateTime
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var numbers = new List<int>() { 1, 2, 3, 4, 5 };
-            numbers.Add(1);
-            numbers.AddRange(new int[3] { 6, 7, 8 });
 
-            foreach (var number in numbers);
-                Console.WriteLine(numbers);
+            var dateTime = new System.DateTime(2025, 3, 2);
+            var now = System.DateTime.Now;
+            var today = System.DateTime.Today;
 
-            Console.WriteLine();
-            Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
-            Console.WriteLine("Last Index of 1: " + numbers.LastIndexOf(1));
+            Console.WriteLine("Hour: " + now.Hour);
+            Console.WriteLine("Minute: " + now.Minute);
 
-            Console.WriteLine("Count: " + numbers.Count);
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
 
-            for (var i = 0; i < numbers.Count; i++)
-            {
-                if (numbers[i] == 1)
-                    numbers.Remove(numbers[i]);
-            }
-            foreach (var number in numbers)
-                Console.WriteLine(number);
-
-            numbers.Clear();
-            Console.WriteLine("Count: " + numbers.Count);
-
-
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortTimeString());
+            Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));
         }
     }
 }
