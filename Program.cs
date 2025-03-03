@@ -5,28 +5,36 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DateTime
+namespace Timespan
 {
     class Program
     {
         static void Main(string[] args)
         {
+            // Creating 
+            var timeSpan = new TimeSpan(1, 2, 3);
 
-            var dateTime = new System.DateTime(2025, 3, 2);
-            var now = System.DateTime.Now;
-            var today = System.DateTime.Today;
+            var timeSpan1 = new TimeSpan(1, 0, 0);
+            var timeSpan2 = TimeSpan.FromHours(1); // Fixed the error by removing 'new'
 
-            Console.WriteLine("Hour: " + now.Hour);
-            Console.WriteLine("Minute: " + now.Minute);
+            var start = DateTime.Now; // Fixed the error by changing namespace
+            var end = DateTime.Now.AddMinutes(2); // Fixed the error by changing AddMinute to AddMinutes
+            var duration = end - start;
+            Console.WriteLine("Duration: " + duration);
 
-            var tomorrow = now.AddDays(1);
-            var yesterday = now.AddDays(-1);
+            // Properties 
+            Console.WriteLine("Minutes: " + timeSpan.Minutes);
+            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
 
-            Console.WriteLine(now.ToLongDateString());
-            Console.WriteLine(now.ToShortDateString());
-            Console.WriteLine(now.ToLongTimeString());
-            Console.WriteLine(now.ToShortTimeString());
-            Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));
+            // Add
+            Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+
+            // ToString
+            Console.WriteLine("ToString: " + timeSpan.ToString());
+
+            // Parse
+            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
         }
     }
 }
