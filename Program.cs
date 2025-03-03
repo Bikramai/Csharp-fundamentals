@@ -5,36 +5,37 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Timespan
+namespace Strings
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Creating 
-            var timeSpan = new TimeSpan(1, 2, 3);
+            var fullName = "Bikram Phurumbo ";
+            Console.WriteLine("My Full Name is: '{0}'", fullName.Trim());
+            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());
 
-            var timeSpan1 = new TimeSpan(1, 0, 0);
-            var timeSpan2 = TimeSpan.FromHours(1); // Fixed the error by removing 'new'
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index + 1);
+            Console.WriteLine("First Name: " + firstName);
+            Console.WriteLine("Last Name: " + lastName);
 
-            var start = DateTime.Now; // Fixed the error by changing namespace
-            var end = DateTime.Now.AddMinutes(2); // Fixed the error by changing AddMinute to AddMinutes
-            var duration = end - start;
-            Console.WriteLine("Duration: " + duration);
+            var names = fullName.Split(' ');
+            Console.WriteLine("First Name: " + names[0]);
+            Console.WriteLine("Last Name: " + names[1]);
 
-            // Properties 
-            Console.WriteLine("Minutes: " + timeSpan.Minutes);
-            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
+            Console.WriteLine(fullName.Replace("Bikram", "Bike"));
 
-            // Add
-            Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
-            Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+            if (String.IsNullOrWhiteSpace(" "))
+                Console.WriteLine("Invalid");
 
-            // ToString
-            Console.WriteLine("ToString: " + timeSpan.ToString());
+            var str = "25";
+            var age = Convert.ToByte(str);
+            Console.WriteLine(age);
 
-            // Parse
-            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
+            float price = 29.95f;
+            Console.WriteLine(price.ToString("C0"));
         }
     }
 }
