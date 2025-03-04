@@ -47,7 +47,7 @@ As the number of classes and namespaces even grow further, you may want to physi
 - Lists
 - Demo: Lists
 
-#Section: 6 - Working with Dates
+# Section: 6 - Working with Dates
 - DateTime
 - TimeSpan
 
