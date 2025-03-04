@@ -6,30 +6,22 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
  
-namespace File_File_Info
+namespace Directory_Directory_Info
 
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var path = @"C:\Users\bikram\Desktop\file.txt";
+            var path = @"c:\Projects\Csharpfundamentals\HelloWorld\HelloWorld.sln";
 
-            File.Copy(@"C:\Users\bikram\Desktop\file.txt", @"C:\Users\bikram\Desktop\file1.txt", true);
-            File.Delete(path);
-            if (File.Exists(path))
-            {
-                //
-            }
-            var content = File.ReadAllText(path);
+            var dotIndex = path.IndexOf('.');
+            var extension = path.Substring(dotIndex);
 
-            var fileInfo = new FileInfo(path);
-            fileInfo.CopyTo("...");
-            fileInfo.Delete();
-            if (fileInfo.Exists)
-            {
-                //
-            }
+            Console.WriteLine("Extension: " + Path.GetExtension(path));
+            Console.WriteLine("File Name: " + Path.GetFileName(path));
+            Console.WriteLine("File Name without Extension: " + Path.GetFileNameWithoutExtension(path));
+            Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));
         }    
     }
 }
