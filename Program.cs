@@ -1,31 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+ 
+namespace File_File_Info
 
-namespace Strings
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var builder = new StringBuilder("Hello World");
+            var path = @"C:\Users\bikram\Desktop\file.txt";
 
-            builder
-                .Append('-', 10)
-                .AppendLine()
-                .Append("Header")
-                .AppendLine()
-                .Append('-', 10)
-                .Replace('-', '+')
-                .Remove(0, 10)
-                .Insert(0, new string('-', 10));
+            File.Copy(@"C:\Users\bikram\Desktop\file.txt", @"C:\Users\bikram\Desktop\file1.txt", true);
+            File.Delete(path);
+            if (File.Exists(path))
+            {
+                //
+            }
+            var content = File.ReadAllText(path);
 
-            Console.WriteLine(builder);
-
-            Console.WriteLine("First Char: " + builder[0]);
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo("...");
+            fileInfo.Delete();
+            if (fileInfo.Exists)
+            {
+                //
+            }
         }    
     }
 }
