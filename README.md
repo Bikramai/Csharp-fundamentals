@@ -14,7 +14,7 @@ A namespace is a container for related classes. So as your application grows in 
 As the number of classes and namespaces even grow further, you may want to physically separate related namespaces into separate assemblies. An assembly is a file (DLL or EXE) that contains one or more namespaces and classes. An EXE file represents a program that can be executed. A DLL is a file that includes code that can be re-used across different programs.
 
 # Section: 2 - Primitive Types and Expressions
-## Variables and Constants
+- Variables and Constants
 - Overflowing
 - Scope
 - Demo: Variables and constants
@@ -24,3 +24,50 @@ As the number of classes and namespaces even grow further, you may want to physi
 - What are Logical Operators?
 - Demo: Operators
 - Comments
+  
+# Section: 3 - Non-Primitive Types
+- Introduction
+- Classes
+- Structs
+- Arrays
+- Strings
+- Enums
+- Reference Types and Value Types
+
+# Section: 4 - Control Flow
+- Conditional Statements
+- If/Else, Switch/Case
+- Iteration Statements
+- Demo: for Loops, Foreach loops, While loops
+- Random Class
+
+# Section: 5 - Arrays and Lists
+- Arrays
+- Demo: Arrays
+- Lists
+- Demo: Lists
+
+#Section: 6 - Working with Dates
+- DateTime
+- TimeSpan
+
+# Section: 7 - Working with Text
+- String
+- Demo: Strings
+- Live Coding: Summarizing Text
+- StringBuilder
+- Procedural Programming
+
+# Section: 8 - Working with Files
+- Introduction to System.IO
+- File and File Info
+- Directory and Directory Info
+- Path
+
+# Section: 9 - Dubugging Applications
+- Debugging Tools in Visual Studio
+- Removing Side Effects
+- Defensive Programming
+- Call Stack Window
+- Locals and Autos Windows
+  
